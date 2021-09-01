@@ -11,7 +11,7 @@ use std::ffi::{CStr, CString};
 
 /// Generic label independent partition abstraction
 pub struct Partition {
-    pub(crate) ptr: *mut fdisk_sys::fdisk_partition,
+    pub ptr: *mut fdisk_sys::fdisk_partition,
 }
 
 impl Partition {

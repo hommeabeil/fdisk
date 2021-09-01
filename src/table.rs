@@ -8,7 +8,7 @@ use fdisk_sys;
 
 /// Container for fdisk partitions
 pub struct Table {
-    pub(crate) ptr: *mut fdisk_sys::fdisk_table,
+    pub ptr: *mut fdisk_sys::fdisk_table,
 }
 
 impl Table {

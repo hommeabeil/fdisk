@@ -15,14 +15,14 @@ pub enum DiskUnit {
 
 /// Stores info about device
 pub struct Context {
-    pub(crate) ptr: *mut fdisk_sys::fdisk_context,
+    pub ptr: *mut fdisk_sys::fdisk_context,
 }
 
 impl Context {
     /// Returns a new context for libfdisk
     pub fn new() -> Context {
         Context {
-            ptr: unsafe { fdisk_sys::fdisk_new_context() },
+            ptr: unsafe { fdisk_sys::fdisk_init_debug(0); fdisk_sys::fdisk_new_context() },
         }
     }
 

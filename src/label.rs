@@ -7,7 +7,7 @@ use std::ffi::{CStr, CString};
 
 /// Container for fdisk partitions
 pub struct Label {
-    pub(crate) ptr: *mut fdisk_sys::fdisk_label,
+    pub ptr: *mut fdisk_sys::fdisk_label,
 }
 #[repr(u32)]
 pub enum DiskLabel {
