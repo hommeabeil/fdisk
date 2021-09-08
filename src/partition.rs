@@ -290,4 +290,11 @@ impl Context {
             v => Err(nix::Error::from_errno(nix::errno::from_i32(-v)).into()),
         }
     }
+
+    pub fn delete_partition(&self, no: usize) -> Result<()> {
+        match unsafe { fdisk_sys::fdisk_delete_partition(self.ptr, no)} {
+            0 => Ok(()),
+            v => Err(nix::Error::from_errno(nix::errno::from_i32(-v)).into()),
+        }
+    }
 }
